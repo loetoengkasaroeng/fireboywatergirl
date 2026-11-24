@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="#071208" name="theme-color"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<title>Fireboy &amp; Watergirl: Forest Temple</title>
+<link href="css/base.css" rel="stylesheet"/>
+<link href="css/components.css" rel="stylesheet"/>
+<link href="css/game.css" rel="stylesheet"/>
+<link href="css/overlays.css" rel="stylesheet"/>
+</head>
+<body class="ingame" data-page="game">
+<canvas aria-hidden="true" id="menuBg"></canvas>
+<div id="app">
+<section class="screen active" id="game">
+<div id="hud">
+<div class="hud-l"><span id="hudLevel">LEVEL 1</span><span id="hudName"></span></div>
+<div class="hud-m"><span id="hudTime">00:00</span><span class="gems" id="hudGems"></span></div>
+<div class="hud-r">
+<button class="btn small" id="btnRestart" title="Ulangi (R)">ULANG</button>
+<button class="btn small blue" id="btnPause" title="Jeda (Esc / P)">JEDA</button>
+</div>
+</div>
+<div id="stage">
+<canvas height="560" id="cv" width="960"></canvas>
+<div class="touch" id="touch">
+<div class="pad f" data-pad="f">
+<button aria-label="Fireboy kiri" data-k="KeyA">◀</button>
+<button aria-label="Fireboy lompat" data-k="KeyW">▲</button>
+<button aria-label="Fireboy kanan" data-k="KeyD">▶</button>
+</div>
+<div class="pad w" data-pad="w">
+<button aria-label="Watergirl kiri" data-k="ArrowLeft">◀</button>
+<button aria-label="Watergirl lompat" data-k="ArrowUp">▲</button>
+<button aria-label="Watergirl kanan" data-k="ArrowRight">▶</button>
+</div>
+</div>
+</div>
+<p id="hint"></p>
+</section>
+</div>
+<div aria-modal="true" class="overlay" id="pause" role="dialog">
+<div class="panel pop">
+<h2>DIJEDA</h2>
+<div class="stack">
+<button class="btn big" id="pResume">LANJUT</button>
+<button class="btn" id="pRestart">ULANGI LEVEL</button>
+<button class="btn" data-settings="">PENGATURAN</button>
+<button class="btn blue" id="pLevels">PILIH LEVEL</button>
+<button class="btn red" id="pQuit">KE DASHBOARD</button>
+</div>
+</div>
+</div>
+<div aria-modal="true" class="overlay" id="victory" role="dialog">
+<div class="panel pop">
+<h2 class="good">LEVEL SELESAI!</h2>
+<div aria-label="bintang" class="stars" id="vStars"></div>
+<p class="info" id="vInfo"></p>
+<div class="stack">
+<button class="btn big green" id="vNext">LEVEL BERIKUTNYA</button>
+<div class="row">
+<button class="btn" id="vReplay">ULANGI</button>
+<button class="btn blue" id="vLevels">LEVEL</button>
+</div>
+</div>
+</div>
+</div>
+<div aria-modal="true" class="overlay" id="gameover" role="dialog">
+<div class="panel pop">
+<h2 class="bad">GAME OVER</h2>
+<p class="info" id="goCause"></p>
+<div class="stack">
+<button class="btn big red" id="goRetry">COBA LAGI</button>
+<div class="row">
+<button class="btn blue" id="goLevels">PILIH LEVEL</button>
+<button class="btn" id="goDash">DASHBOARD</button>
+</div>
+</div>
+</div>
+</div>
+<div aria-modal="true" class="overlay" id="settings" role="dialog">
+<div class="panel pop settings">
+<h2>PENGATURAN</h2>
+<label class="row2">Musik <output id="outMusic"></output><input id="setMusic" max="100" min="0" type="range"/></label>
+<label class="row2">Efek suara <output id="outSfx"></output><input id="setSfx" max="100" min="0" type="range"/></label>
+<label class="check"><input id="setMute" type="checkbox"/> Matikan semua suara</label>
+<label class="check"><input id="setParticles" type="checkbox"/> Efek partikel (kunang-kunang, daun, percikan)</label>
+<label class="check"><input id="setShake" type="checkbox"/> Layar bergetar</label>
+<label class="row2">Kontrol sentuh
+      <select id="setTouch"><option value="auto">Otomatis</option><option value="on">Selalu tampil</option><option value="off">Sembunyikan</option></select>
+</label>
+<button class="btn small red" id="setReset">HAPUS PROGRES AKUN INI</button>
+<button class="btn big" id="setClose">TUTUP</button>
+</div>
+</div>
+<div id="toast" role="status"></div>
+<div class="rotate" id="rotate">Putar HP ke mode landscape untuk pengalaman terbaik — atau main dengan layar vertikal.</div>
+<script src="js/engine.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/core.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/graphics.js"></script>
+<script src="js/game.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>

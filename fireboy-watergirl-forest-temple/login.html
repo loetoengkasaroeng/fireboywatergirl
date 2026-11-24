@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="#071208" name="theme-color"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<title>Fireboy &amp; Watergirl: Forest Temple</title>
+<link href="css/base.css" rel="stylesheet"/>
+<link href="css/components.css" rel="stylesheet"/>
+<link href="css/game.css" rel="stylesheet"/>
+<link href="css/overlays.css" rel="stylesheet"/>
+</head>
+<body data-page="login">
+<canvas aria-hidden="true" id="menuBg"></canvas>
+<div id="app">
+<section class="screen active" id="login">
+<form autocomplete="on" class="panel form" id="loginForm" novalidate="">
+<h2>MASUK</h2>
+<label for="lu">Username</label>
+<input autocomplete="username" id="lu" maxlength="20" placeholder="username kamu"/>
+<label for="lp">Password</label>
+<input autocomplete="current-password" id="lp" maxlength="40" placeholder="password" type="password"/>
+<p class="msg" id="loginMsg" role="alert"></p>
+<button class="btn blue wide" type="submit">MASUK</button>
+<p class="alt">Belum punya akun? <a data-go="register" href="#">Daftar di sini</a></p>
+<button class="btn ghost small" data-go="landing" type="button">&lt; KEMBALI</button>
+</form>
+</section>
+</div>
+<div aria-modal="true" class="overlay" id="settings" role="dialog">
+<div class="panel pop settings">
+<h2>PENGATURAN</h2>
+<label class="row2">Musik <output id="outMusic"></output><input id="setMusic" max="100" min="0" type="range"/></label>
+<label class="row2">Efek suara <output id="outSfx"></output><input id="setSfx" max="100" min="0" type="range"/></label>
+<label class="check"><input id="setMute" type="checkbox"/> Matikan semua suara</label>
+<label class="check"><input id="setParticles" type="checkbox"/> Efek partikel (kunang-kunang, daun, percikan)</label>
+<label class="check"><input id="setShake" type="checkbox"/> Layar bergetar</label>
+<label class="row2">Kontrol sentuh
+      <select id="setTouch"><option value="auto">Otomatis</option><option value="on">Selalu tampil</option><option value="off">Sembunyikan</option></select>
+</label>
+<button class="btn small red" id="setReset">HAPUS PROGRES AKUN INI</button>
+<button class="btn big" id="setClose">TUTUP</button>
+</div>
+</div>
+<div id="toast" role="status"></div>
+<div class="rotate" id="rotate">Putar HP ke mode landscape untuk pengalaman terbaik — atau main dengan layar vertikal.</div>
+<script src="js/engine.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/core.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/graphics.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>

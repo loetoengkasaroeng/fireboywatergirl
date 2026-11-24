@@ -1,0 +1,33 @@
+/* ==========================================================
+   Fireboy & Watergirl: Forest Temple - gaya antarmuka
+   Tema kuil hutan: batu berlumut, kayu, emas, cahaya hijau.
+   ========================================================== */
+:root{
+  --ink:#071208; --deep:#0b1c10; --moss:#2f7d3a; --leaf:#6fdc4f; --gold:#f2c14e; --gold2:#ffe48a;
+  --wood:#6b4423; --stone:#41564a; --fire:#ff6a2b; --water:#3fa7ff; --poison:#7dff3a; --cream:#f4ecd0; --muted:#9fb8a0;
+  --sat:env(safe-area-inset-top,0px); --sab:env(safe-area-inset-bottom,0px); --sal:env(safe-area-inset-left,0px); --sar:env(safe-area-inset-right,0px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:#050d07;color:var(--cream);overflow:hidden;
+  font-family:"Trebuchet MS","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+  touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+button,input,select{font:inherit;color:inherit}
+#menuBg{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;image-rendering:pixelated;z-index:0}
+body.ingame #menuBg{display:none}
+body.ingame{background:radial-gradient(ellipse at 50% 30%,#10331c 0%,#06120a 70%)}
+#app{position:relative;z-index:1;height:100%;height:100dvh}
+
+/* ----- layar ----- */
+.screen{display:none;position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  padding:calc(14px + var(--sat)) calc(14px + var(--sar)) calc(14px + var(--sab)) calc(14px + var(--sal))}
+.screen.active{display:flex}
+.screen.top{justify-content:flex-start}
+h2{font:900 clamp(16px,3.2vw,26px)/1.2 "Courier New",monospace;letter-spacing:.14em;color:var(--gold2);margin:0 0 6px;text-align:center;
+  text-shadow:3px 3px 0 #1b1206,0 0 18px rgba(242,193,78,.45);text-transform:uppercase}
+h2.good{color:#9dff7a}h2.bad{color:#ff7b5c}
+.tag{max-width:560px;text-align:center;margin:0;font-size:clamp(15px,2.4vw,20px);text-shadow:2px 2px 0 #000}
+.foot{margin:0;color:var(--muted);font-size:14px;text-align:center}
+.foot b{color:var(--gold2)}
+#logo{width:min(720px,94vw);height:auto;image-rendering:pixelated;filter:drop-shadow(0 8px 0 rgba(0,0,0,.45)) drop-shadow(0 0 28px rgba(111,220,79,.35));animation:float 3.4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-6px)}}
+

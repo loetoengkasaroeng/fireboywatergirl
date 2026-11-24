@@ -1,0 +1,49 @@
+/* ----- tombol bergaya piksel ----- */
+.btn{display:inline-block;font:900 clamp(13px,2.4vw,16px)/1 "Courier New",monospace;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+  padding:14px 22px;color:#16210f;background:linear-gradient(#ffe48a,#f2c14e);border:3px solid #1b1206;cursor:pointer;position:relative;
+  box-shadow:inset -3px -3px 0 rgba(0,0,0,.28),inset 3px 3px 0 rgba(255,255,255,.45),0 5px 0 #1b1206;transition:transform .08s,filter .12s}
+.btn:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.btn:active{transform:translateY(3px);box-shadow:inset -3px -3px 0 rgba(0,0,0,.28),inset 3px 3px 0 rgba(255,255,255,.45),0 2px 0 #1b1206}
+.btn:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.btn.blue{background:linear-gradient(#8fd0ff,#3fa7ff);color:#04203a}
+.btn.green{background:linear-gradient(#b6ff8f,#5fcf4a);color:#0b2a07}
+.btn.red{background:linear-gradient(#ff9a7a,#e8452c);color:#2a0803}
+.btn.ghost{background:rgba(7,18,8,.7);color:var(--cream);box-shadow:inset 0 0 0 2px #3d6b3f,0 5px 0 #1b1206}
+.btn.small{padding:10px 14px;font-size:12px}
+.btn.wide{width:100%}
+.btn.big{font-size:clamp(20px,4.6vw,32px);padding:18px 54px 18px 74px;animation:pulse 1.3s steps(2) infinite}
+.btn.big::before{content:"";position:absolute;left:26px;top:50%;margin-top:-12px;border:12px solid transparent;border-left:19px solid #1b1206;border-right:0}
+@keyframes pulse{50%{box-shadow:inset -3px -3px 0 rgba(0,0,0,.28),inset 3px 3px 0 rgba(255,255,255,.45),0 5px 0 #1b1206,0 0 26px rgba(255,228,138,.85)}}
+.stack{display:flex;flex-direction:column;align-items:center;gap:14px}
+.row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+
+/* ----- panel & formulir ----- */
+.panel{background:linear-gradient(rgba(14,32,18,.94),rgba(8,20,11,.95));border:4px solid #1b1206;padding:22px;
+  box-shadow:inset 0 0 0 3px #3d6b3f,inset 0 0 0 6px #1b3a22,0 10px 0 #0a1409,0 0 50px rgba(0,0,0,.6)}
+.form{width:min(430px,100%);display:flex;flex-direction:column;gap:8px}
+label{font-weight:700;color:var(--gold2)}
+input[type=text],input[type=password],input:not([type]),select{width:100%;padding:12px;background:#07130a;border:3px solid #3fa7ff;color:var(--cream);font-size:18px;border-radius:0}
+.msg{min-height:26px;margin:2px 0;text-align:center;font-weight:700}
+.msg.err{color:#ff8a6a}.msg.ok{color:#9dff7a}
+.alt{text-align:center;margin:4px 0;color:var(--muted)}.alt a{color:#8fd0ff}
+.dash{width:min(640px,100%);display:flex;flex-direction:column;gap:18px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.stat{background:rgba(0,0,0,.35);border:2px solid #2c5a31;padding:10px;text-align:center}
+.stat small{display:block;color:var(--muted)}
+.stat b{font:900 22px "Courier New",monospace;color:var(--gold2)}
+
+/* ----- pilih level ----- */
+.bar{width:min(1040px,100%);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.bar h2{margin:0}
+.grid{width:min(1040px,100%);display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px;padding:8px 4px 24px}
+.card{cursor:pointer;padding:10px;text-align:center;position:relative;transition:transform .12s}
+.card:hover{transform:translateY(-5px)}
+.card canvas{width:100%;height:auto;image-rendering:pixelated;border:3px solid #1b1206;background:#07130a}
+.card .no{font:900 20px "Courier New",monospace;color:var(--gold2);text-shadow:2px 2px 0 #000;margin:4px 0}
+.card .nm{font-size:15px;min-height:38px;line-height:1.2}
+.card .st{font-size:22px;color:#4a5a4a;letter-spacing:3px}
+.card .st i{font-style:normal}.card .st i.on{color:var(--gold)}
+.card .rec{font-size:13px;color:var(--muted)}
+.card.locked{cursor:not-allowed;filter:grayscale(1) brightness(.55)}
+.card.locked::after{content:"TERKUNCI";position:absolute;top:42%;left:0;right:0;font:900 14px "Courier New",monospace;color:#fff;letter-spacing:.2em}
+

@@ -1,0 +1,31 @@
+/* ----- game ----- */
+#game{justify-content:flex-start;gap:6px;padding:calc(6px + var(--sat)) calc(6px + var(--sar)) calc(6px + var(--sab)) calc(6px + var(--sal))}
+#hud{width:100%;max-width:1100px;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 10px;
+  background:rgba(4,12,6,.85);border:3px solid #1b1206;box-shadow:inset 0 0 0 2px #3d6b3f;font:900 13px "Courier New",monospace;letter-spacing:.08em}
+#hud .hud-l,#hud .hud-m,#hud .hud-r{display:flex;align-items:center;gap:10px}
+#hudName{color:var(--muted);font-weight:700}
+#hudTime{color:#8fd0ff;font-size:16px}
+.gems{color:var(--gold2)}.gems .f{color:#ff8a4d}.gems .w{color:#7fd0ff}
+#stage{position:relative;line-height:0;flex:0 0 auto}
+#cv{display:block;image-rendering:pixelated;border:5px solid #1b1206;box-shadow:0 0 0 3px #3d6b3f,0 12px 0 3px #0a1409,0 0 60px rgba(0,0,0,.7);background:#06120a}
+#hint{margin:2px 0 0;max-width:960px;text-align:center;color:var(--cream);font-size:clamp(13px,2.2vw,17px);text-shadow:2px 2px 0 #000;min-height:22px}
+#hint:empty{display:none}
+
+/* ----- kontrol sentuh: tombol di samping kanvas (landscape) atau di bawahnya (portrait) ----- */
+.touch{display:none}
+body.touch-on .touch{display:contents}
+.pad{display:flex;gap:8px}
+.pad button{width:var(--btn,56px);height:var(--btn,56px);border:3px solid #1b1206;background:rgba(6,16,8,.7);color:var(--cream);font:22px sans-serif;
+  touch-action:none;-webkit-user-select:none;user-select:none;padding:0;line-height:1}
+.pad.f button{border-color:#ff6a2b;box-shadow:inset 0 0 0 2px rgba(255,106,43,.35)}
+.pad.w button{border-color:#3fa7ff;box-shadow:inset 0 0 0 2px rgba(63,167,255,.35)}
+.pad button.on{background:var(--gold);color:#16210f}
+body.touch-on #stage{display:flex;align-items:flex-end;justify-content:center;gap:12px;width:100%}
+body.touch-on .pad.f{order:-1}
+@media (orientation:portrait){
+  body.touch-on #stage{flex-wrap:wrap;justify-content:space-between;gap:12px 0}
+  body.touch-on #cv{flex:0 0 100%}
+  body.touch-on .pad.f{order:2}
+  body.touch-on .pad.w{order:3}
+}
+
